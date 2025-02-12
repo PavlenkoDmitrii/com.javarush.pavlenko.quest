@@ -3,7 +3,6 @@ package com.javarush.pavlenko.quest.service;
 import com.javarush.pavlenko.quest.entity.Question;
 import com.javarush.pavlenko.quest.repository.QuestionRepository;
 
-import java.util.ArrayList;
 import java.util.List;
 
 public class Quest {
@@ -16,10 +15,6 @@ public class Quest {
         this.score = 0;
         this.currentQuestionIndex = 0;
 
-    }
-
-    public int getQuestionsSize() {
-        return questions.size();
     }
 
     public int getScore() {

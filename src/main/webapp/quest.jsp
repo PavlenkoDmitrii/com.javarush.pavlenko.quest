@@ -18,9 +18,9 @@
             <input type="radio" name="answer" value="${loop.index}" required> ${answer}<br>
         </c:forEach>
         <button class="btn btn-primary mt-1">Ответить</button>
-        <br/>
+            <br/>
             <%@ include file="progress.jsp" %>
-        <br/>
+            <br/>
         <div class="border p-2 rounded shadow-sm bg-white mt-1 d-inline-block">
             Сессия: <br/>
             Игрок: ${requestScope.name} <br/>
