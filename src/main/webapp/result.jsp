@@ -1,4 +1,5 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ taglib prefix="c" uri="jakarta.tags.core" %>
 <%@ page isELIgnored="false" %>
 
 <html>
@@ -11,10 +12,16 @@
             crossorigin="anonymous"></script>
 </head>
 <body>
-
-<div class="container mt-4 bg-primary text-white text-center">
-    <h1>Вы победили! Вполне ожидаемо!</h1>
-</div>
+<c:if test="${sessionScope.score == 4}">
+    <div class="container mt-4 bg-primary text-white text-center">
+        <h1>Вы победили! Вполне ожидаемо!</h1>
+    </div>
+</c:if>
+<c:if test="${sessionScope.score < 4}">
+    <div class="container mt-4 bg-primary text-white text-center">
+        <h1>Увы, вы сделали невозможное и проиграли!</h1>
+    </div>
+</c:if>
 <div class="container mt-3 bg-light text-center">
     <h2>Наверняка вы хотите попробовать еще раз!</h2>
     <br/>

@@ -34,15 +34,12 @@ public class QuestServlet extends HttpServlet {
 
         int answerIndex = Integer.parseInt(req.getParameter("answer"));
         boolean hasNextQuestion = quest.nextQuestion(answerIndex);
-        int score = quest.getScore();
-        session.setAttribute("score", score);
+        session.setAttribute("score", quest.getScore());
 
         if (hasNextQuestion) {
             resp.sendRedirect("/quest");
-        } else if (score == 4) {
-            req.getRequestDispatcher("/win.jsp").forward(req, resp);
         } else {
-            req.getRequestDispatcher("/lose.jsp").forward(req, resp);
+            req.getRequestDispatcher("/result.jsp").forward(req, resp);
         }
     }
 }
